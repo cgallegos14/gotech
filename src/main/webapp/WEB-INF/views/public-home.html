@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+    
+<head data-th-fragment="header">
+    <meta data-th-replace="fragments/sb-admin :: head-common"/>
+    
+    <title data-th-text="#{homepage.page.title}">Title</title>
+</head>
+
+<body>
+
+<div id="wrapper"><!-- /#wrapper -->
+    <div id="page-wrapper">
+        <div class="row">
+            
+            <br />
+            <br />
+            <br />
+            
+            <h1 data-th-text="#{homepage.page.title}">Title</h1>
+            
+            <h3>Public site comming soon</h3>
+            
+            <p>
+                <a href="admin-gotech-prrc/" data-td-href="@{/admin-gotech-prrc/}">Admin Home</a><br />
+            </p>
+            
+            <p>
+                <a href="admin-gotech-prrc/ongardwell/" data-td-href="@{/admin-gotech-prrc/ongardwell/}">Ongardwell Search</a><br />
+            </p>
+            
+            <br />
+            <br />
+            <br />
+            
+        </div>
+    </div>
+</div>
+    
+    <div data-th-replace="fragments/sb-admin :: body-js-footer-common"></div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta data-th-replace="fragments/sb-admin :: head-common"/>
+    
+    <title data-th-text="#{admin.page.title}">Title</title>
+</head>
+
+<body>
+
+<div id="wrapper"><!-- /#wrapper -->
+
+    <div data-th-replace="fragments/sb-admin :: top-nav"></div>
+    
+    <div data-th-replace="fragments/sb-admin :: vert-nav-admin"></div>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+            
+                <h4 class="page-header" data-th-text="#{admin.page.title}">Page Header Title</h4>
+                
+                <h4 th:text="${message}" th:unless="${message == null}">Message Text Goes Here If One Exists</h4>
+                
+                <br />
+                <br />
+                <br />
+                
+                <p>
+                    <a href="admin-gotech-prrc/ongardwell" data-th-href="@{/admin-gotech-prrc/ongardwell/}">Ongard Well Search</a><br />
+                </p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-th-replace="fragments/sb-admin :: body-js-footer-common"></div>
+
+</body>
+</html>

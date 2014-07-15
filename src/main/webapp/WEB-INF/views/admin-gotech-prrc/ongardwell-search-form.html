@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta data-th-replace="fragments/sb-admin :: head-common"/>
+    
+    <title data-th-text="#{ongardwell.search.page.title}">Title</title>
+</head>
+
+<body>
+
+<div id="wrapper"><!-- /#wrapper -->
+
+    <div data-th-replace="fragments/sb-admin :: top-nav"></div>
+    
+    <div data-th-replace="fragments/sb-admin :: vert-nav-admin"></div>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+            
+                <h4 class="page-header" data-th-text="#{ongardwell.search.form.title}">Search Form Title</h4>
+                
+                <h4 th:text="${message}" th:unless="${message == null}">Message Text Goes Here If One Exists</h4>
+                
+                WELL SEARCH FORM @ <span th:text="${time}" th:unless="${time == null}">Current Time Appears Here Just To Make Sure The Data Is Fresh</span><br />
+                <br />
+                
+                <div class="col-sm-2"></div>
+                <div class="col-sm-6">
+                    <!-- -->
+                    <form class="form-horizontal" action="#" data-th-action="@{/admin-gotech-prrc/ongardwell/list}" data-th-object="${ongardWell}" method="get" accept-charset="utf-8">
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label" data-th-text="#{ongardwell.search.api.label}">Well API</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" data-th-value="*{api}" data-th-field="*{api}" ></input>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label" data-th-text="#{ongardwell.search.wellid.label}">Well IDr</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" data-th-value="*{wellid}" data-th-field="*{wellid}" ></input>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label" data-th-text="#{ongardwell.search.township.label}">Well Township</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" data-th-value="*{township}" data-th-field="*{township}" ></input>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-5 col-sm-7" >
+                                <button type="submit" class="btn btn-primary" name="action" data-th-value="#{button.action.search}"   data-th-text="#{button.label.search}"  >Search</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-5 col-sm-7" >
+                                <p class="text-danger" data-th-if="${#fields.hasErrors('api')}" data-th-errors="*{api}">api error</p> 
+                                <p class="text-danger" data-th-if="${#fields.hasErrors('wellid')}" data-th-errors="*{wellid}">wellid error</p> 
+                                <p class="text-danger" data-th-if="${#fields.hasErrors('township')}" data-th-errors="*{township}">township error</p> 
+                            </div>
+                        </div>
+                    </form>
+                    <!-- -->
+                </div>
+                <div class="col-sm-4"></div>
+                
+            </div>  <!-- /.col-lg-12 -->                
+        </div>      <!-- /.row -->              
+    </div>          <!-- page wrapper -->
+</div>              <!-- /#wrapper -->
+
+    
+    <div data-th-replace="fragments/sb-admin :: body-js-footer-common"></div>
+    
+</body>
+</html>
